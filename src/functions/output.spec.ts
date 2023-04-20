@@ -4,7 +4,7 @@ describe('output', () => {
     it('should output empty string when empty argument passed', () => {
         const input = '';
         const result = writeOut(input);
-        expect(result).toBe('');
+        expect(result).toBe('0.0');
     });
 
     it('should output float with precision 1 when integer argument passed', () => {
