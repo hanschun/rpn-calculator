@@ -2,8 +2,10 @@
   "name": "rpn-calculator",
   "version": "1.0.0",
   "description": "CLI RPN calculator",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
+    "build": "npx tsc",
+    "start": "npx ts-node dist/index.js",
     "test": "jest"
   },
   "author": "Hans Chun",
