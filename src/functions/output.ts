@@ -1,5 +1,5 @@
 export const writeOut = (input: string) => {
-    if (!input) {
+    if (isNaN(Number(input))) {
         return '';
     }
     if (Number.isInteger(Number(input))) {
