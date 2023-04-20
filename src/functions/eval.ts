@@ -2,7 +2,7 @@ import vm from "vm";
 
 const allowedOperands = ['+', '-', '/', '*']
 
-export const parseInput = (input: string, context: vm.Context) => {
+export const parseInput = (input: string, context: vm.Context): void => {
     if(!isNaN(Number(input))) {
         context.values.push(input);
     } else if (allowedOperands.includes(input)){
@@ -15,7 +15,7 @@ export const parseInput = (input: string, context: vm.Context) => {
     }
 };
 
-export const rpnEval = (cmd: string, context: vm.Context, _: string, callback: Function) => {
+export const rpnEval = (cmd: string, context: vm.Context, _: string, callback: Function): void => {
     const values = cmd.trim().split(' ');
     for (const value of values) {
         parseInput(value, context);
