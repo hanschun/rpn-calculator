@@ -7,6 +7,7 @@
 1. In a terminal, go to the `rpn-calculator` folder and enter the command `npm run build`. This will build the file for execution.  
 2. Now enter the command `npm start`. This will run the program.  
 3. To end the program, enter `CTRL + D` or type `q` or `.exit` in the command prompt.  
+4. To not run the program, but run the test suite, enter the command `npm run test`.  
 
 # Intent
 To provide a calculator that handles basic operations in RPN (Reverse Polish Notation).  
