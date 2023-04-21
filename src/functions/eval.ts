@@ -3,12 +3,15 @@ import vm from "vm";
 const allowedOperands = ['+', '-', '/', '*']
 
 export const parseInput = (input: string, context: vm.Context): void => {
+    if (input === 'q') {
+        process.exit(0);
+    }
     if(!isNaN(Number(input))) {
         context.values.push(input);
     } else if (allowedOperands.includes(input)){
         const last = context.values.pop();
         const first = context.values.pop();
-        const result = eval(`${first} ${input} ${last}`);
+        const result = eval?.(`"use strict";(${first} ${input} ${last})`);
         if (!isNaN(Number(result))) {
             context.values.push(result);
         }

@@ -9,6 +9,12 @@ describe('eval', () => {
     });
 
     describe('parseInput', () => {
+        it('should exit when a user enters "q"', () => {
+            const exitSpy = jest.spyOn(process, 'exit').mockImplementation();
+            parseInput('q', context);
+            expect(exitSpy).toHaveBeenCalled();
+        });
+
         it('should push a number input onto the context values stack', () => {
             parseInput('1', context);
             expect(context.values[context.values.length - 1]).toBe('1');
